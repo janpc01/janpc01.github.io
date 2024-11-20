@@ -131,3 +131,23 @@ body.dark-mode section {
     transform: translateY(-5px);
 }
 
+.light-mode, .dark-mode {
+    display: inline-block;
+}
+
+body.dark-mode .light-mode {
+    display: none;
+}
+
+body:not(.dark-mode) .dark-mode {
+    display: none;
+}
+
+/* Adjust the controls position */
+.controls {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
