@@ -75,4 +75,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize
     initializeProjects();
+
+    // Modal functionality
+    const modal = document.getElementById('projectModal');
+    const addBtn = document.getElementById('addProjectBtn');
+    const closeBtn = document.querySelector('.close');
+    const projectForm = document.getElementById('newProjectForm');
+
+    addBtn.onclick = () => modal.style.display = "block";
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+    }
+
+    projectForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const newProject = {
+            title: document.getElementById('title').value,
+            description: document.getElementById('description').value,
+            status: document.getElementById('status').value,
+            progress: parseInt(document.getElementById('progress').value),
+            tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
+            links: {
+                demo: document.getElementById('demoLink').value,
+                github: document.getElementById('githubLink').value
+            }
+        };
+
+        // Add to projects array
+        projects.push(newProject);
+        
+        // Clear the projects grid and re-initialize
+        const grid = document.querySelector('.projects-grid');
+        grid.innerHTML = '';
+        initializeProjects();
+        
+        // Reset form and close modal
+        projectForm.reset();
+        modal.style.display = "none";
+    });
 });

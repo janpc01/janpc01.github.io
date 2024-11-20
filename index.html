@@ -51,5 +51,51 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <button id="addProjectBtn" class="add-project-btn">
+        <i class="fas fa-plus"></i> Add Project
+    </button>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Project</h2>
+            <form id="newProjectForm">
+                <div class="form-group">
+                    <label for="title">Project Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" required>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="future">Future Ideas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="progress">Progress (%)</label>
+                    <input type="number" id="progress" min="0" max="100" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" placeholder="Angular, Node.js, MongoDB">
+                </div>
+                <div class="form-group">
+                    <label for="demoLink">Demo URL</label>
+                    <input type="url" id="demoLink">
+                </div>
+                <div class="form-group">
+                    <label for="githubLink">GitHub URL</label>
+                    <input type="url" id="githubLink">
+                </div>
+                <button type="submit" class="submit-btn">Add Project</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
