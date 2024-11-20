@@ -14,24 +14,44 @@
         <section id="current-work">
             <h2>Currently Working On:</h2>
             <div>
-                <h3>Kyoso Cards</h3>
-                <ul>
-                    <li><strong>Todo:</strong>
+                <div class="project-card" data-status="in-progress">
+                    <div class="card-header">
+                        <h3>Kyoso Cards</h3>
+                        <span class="status-badge">In Progress</span>
+                    </div>
+                    <div class="card-content">
                         <ul>
-                            <li>No login purchase
+                            <li><strong>Todo:</strong>
                                 <ul>
-                                    <li>Guest cart unique to guest</li>
-                                    <li>Guest process payment (no authentication for payment form)</li>
-                                </ul>
-                            </li>
-                            <li>Order-process app
-                                <ul>
-                                    <li>Takes in order_id and outputs email with print files and shipping label file</li>
+                                    <li>No login purchase
+                                        <ul>
+                                            <li>Guest cart unique to guest</li>
+                                            <li>Guest process payment (no authentication for payment form)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Order-process app
+                                        <ul>
+                                            <li>Takes in order_id and outputs email with print files and shipping label file</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="card-actions">
+                        <button class="demo-btn">View Demo</button>
+                        <button class="github-btn">GitHub</button>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 75%"></div>
+                        <span class="progress-text">75% Complete</span>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Angular</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -88,6 +108,37 @@
     <footer>
         <p>© 2024 Project Overview</p>
     </footer>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const status = btn.dataset.filter;
+                const projects = document.querySelectorAll('.project-card');
+                
+                projects.forEach(project => {
+                    if (status === 'all' || project.dataset.status === status) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const searchProjects = (query) => {
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                const text = project.textContent.toLowerCase();
+                project.style.display = text.includes(query.toLowerCase()) ? 'block' : 'none';
+            });
+        };
+    </script>
 </body>
 </html>
 
