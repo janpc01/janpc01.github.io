@@ -81,3 +81,53 @@ footer {
     100% { opacity: 1; }
 }
 
+/* Dark mode styles */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #f4f4f4;
+}
+
+body.dark-mode section {
+    background: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+
+/* Project card animations */
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
