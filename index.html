@@ -3,118 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Overview</title>
+    <title>Jan's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Project Overview</h1>
+<body class="dark-mode">
+    <nav>
+        <div class="nav-content">
+            <div class="logo">JPC</div>
+            <div class="nav-controls">
+                <button id="darkModeToggle" class="control-btn">
+                    <i class="fas fa-moon light-mode"></i>
+                    <i class="fas fa-sun dark-mode"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Jan Czarnecki</h1>
+            <p class="typewriter">Full Stack Developer & Tech Enthusiast</p>
+            <div class="social-links">
+                <a href="https://github.com/janpc01" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </header>
-    <div class="controls">
-        <button id="darkModeToggle" class="control-btn">
-            <span class="light-mode">🌙</span>
-            <span class="dark-mode">☀️</span>
-        </button>
-    </div>
+
     <main>
-        <section id="current-work">
-            <h2>Currently Working On:</h2>
-            <div>
-                <div class="project-card" data-status="in-progress">
-                    <div class="card-header">
-                        <h3>Kyoso Cards</h3>
-                        <span class="status-badge">In Progress</span>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li><strong>Todo:</strong>
-                                <ul>
-                                    <li>No login purchase
-                                        <ul>
-                                            <li>Guest cart unique to guest</li>
-                                            <li>Guest process payment (no authentication for payment form)</li>
-                                        </ul>
-                                    </li>
-                                    <li>Order-process app
-                                        <ul>
-                                            <li>Takes in order_id and outputs email with print files and shipping label file</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-actions">
-                        <button class="demo-btn">View Demo</button>
-                        <button class="github-btn">GitHub</button>
-                    </div>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 75%"></div>
-                        <span class="progress-text">75% Complete</span>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">Angular</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="in-progress">In Progress</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="future">Future Ideas</button>
+        </div>
 
-        <section id="in-progress">
-            <h2>In Progress:</h2>
-            <div>
-                <h3>Tempo</h3>
-                <ul>
-                    <li>Start over with MEAN stack using my frontend and backend repos for user authentication and authorization</li>
-                    <li>Frontend repo: <a href="https://github.com/janpc01/angular-17-jwt-auth" target="_blank">angular-17-jwt-auth</a></li>
-                    <li>Backend repo: <a href="https://github.com/janpc01/mean-authentication-authorization" target="_blank">mean-authentication-authorization</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="done">
-            <h2>Done:</h2>
-            <div>
-                <h3>Sensor to Webapp Streaming</h3>
-                <ul>
-                    <li>Deployed at: </li>
-                    <li>Frontend repo: <a href="https://github.com/janpc01/sensor-data-flask" target="_blank">sensor-data-flask</a></li>
-                    <li>Backend repo: <a href="https://github.com/janpc01/sensor-backend" target="_blank">sensor-backend</a> (not up-to-date, need to push code from lab machine)</li>
-                </ul>
-            </div>
-            <div>
-                <h3>CO2 Sensor Project</h3>
-                <p>Info</p>
-            </div>
-        </section>
-
-        <section id="future-ideas">
-            <h2>Ideas for Future:</h2>
-            <ul>
-                <li>Custom merchandise shop
-                    <ul>
-                        <li>Custom mugs, t-shirts, hoodies, etc.</li>
-                    </ul>
-                </li>
-                <li>App for generating ads
-                    <ul>
-                        <li>Takes in prompt → generates script, mp3 or AI voiceover reading script, video demo of how to use site</li>
-                        <li>Use neural networks to apply to making ads
-                            <ul>
-                                <li>Features: type of script generated, type of voice used for voiceover, different languages, animations, etc.</li>
-                                <li>Rewards: number of views, clicks on link, purchases from ad link</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+        <div class="projects-grid">
+            <!-- Project cards will be dynamically inserted here -->
+        </div>
     </main>
+
     <footer>
-        <p>© 2024 Project Overview</p>
+        <p>© 2024 Jan Carbonell. Built with 💻 and ☕</p>
     </footer>
-    <script src="script.js" defer></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
