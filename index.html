@@ -3,126 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrum Board</title>
+    <title>Project Overview</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Scrum Board</h1>
-        <p>Manage and track progress on projects using Scrum.</p>
+        <h1>Project Overview</h1>
     </header>
     <main>
-        <!-- Kyoso Cards Section -->
-        <section class="scrum-section">
-            <h2>Kyoso Cards</h2>
-            <div class="scrum-board">
-                <div class="column backlog">
-                    <h3>Product Backlog</h3>
-                    <ul>
-                        <li>Enable no-login purchases</li>
-                        <li>Create guest cart functionality</li>
-                        <li>Allow guest payment processing without authentication</li>
-                    </ul>
-                </div>
-                <div class="column sprint-backlog">
-                    <h3>Sprint Backlog</h3>
-                    <ul>
-                        <li>Order-process app to handle order_id</li>
-                        <li>Generate email with print files</li>
-                        <li>Generate shipping label file</li>
-                    </ul>
-                </div>
-                <div class="column done">
-                    <h3>Done</h3>
-                    <ul>
-                        <li>Initial project setup</li>
-                    </ul>
-                </div>
+        <section id="current-work">
+            <h2>Currently Working On:</h2>
+            <div>
+                <h3>Kyoso Cards</h3>
+                <ul>
+                    <li><strong>Todo:</strong>
+                        <ul>
+                            <li>No login purchase
+                                <ul>
+                                    <li>Guest cart unique to guest</li>
+                                    <li>Guest process payment (no authentication for payment form)</li>
+                                </ul>
+                            </li>
+                            <li>Order-process app
+                                <ul>
+                                    <li>Takes in order_id and outputs email with print files and shipping label file</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Tempo Section -->
-        <section class="scrum-section">
-            <h2>Tempo</h2>
-            <div class="scrum-board">
-                <div class="column backlog">
-                    <h3>Product Backlog</h3>
-                    <ul>
-                        <li>Start over with MEAN stack</li>
-                        <li>Integrate authentication and authorization</li>
-                    </ul>
-                </div>
-                <div class="column sprint-backlog">
-                    <h3>Sprint Backlog</h3>
-                    <ul>
-                        <li>Use <a href="https://github.com/janpc01/angular-17-jwt-auth" target="_blank">Frontend Repo</a></li>
-                        <li>Use <a href="https://github.com/janpc01/mean-authentication-authorization" target="_blank">Backend Repo</a></li>
-                    </ul>
-                </div>
-                <div class="column done">
-                    <h3>Done</h3>
-                    <ul>
-                        <li>Identify existing requirements</li>
-                    </ul>
-                </div>
+        <section id="in-progress">
+            <h2>In Progress:</h2>
+            <div>
+                <h3>Tempo</h3>
+                <ul>
+                    <li>Start over with MEAN stack using my frontend and backend repos for user authentication and authorization</li>
+                    <li>Frontend repo: <a href="https://github.com/janpc01/angular-17-jwt-auth" target="_blank">angular-17-jwt-auth</a></li>
+                    <li>Backend repo: <a href="https://github.com/janpc01/mean-authentication-authorization" target="_blank">mean-authentication-authorization</a></li>
+                </ul>
             </div>
         </section>
 
-        <!-- Sensor to Webapp Streaming Section -->
-        <section class="scrum-section">
-            <h2>Sensor to Webapp Streaming</h2>
-            <div class="scrum-board">
-                <div class="column backlog">
-                    <h3>Product Backlog</h3>
-                    <ul>
-                        <li>Push latest code to <a href="https://github.com/janpc01/sensor-backend" target="_blank">Backend Repo</a></li>
-                    </ul>
-                </div>
-                <div class="column sprint-backlog">
-                    <h3>Sprint Backlog</h3>
-                    <ul>
-                        <li>Test deployment</li>
-                    </ul>
-                </div>
-                <div class="column done">
-                    <h3>Done</h3>
-                    <ul>
-                        <li>Deploy frontend to production</li>
-                        <li>Backend deployed</li>
-                    </ul>
-                </div>
+        <section id="done">
+            <h2>Done:</h2>
+            <div>
+                <h3>Sensor to Webapp Streaming</h3>
+                <ul>
+                    <li>Deployed at: </li>
+                    <li>Frontend repo: <a href="https://github.com/janpc01/sensor-data-flask" target="_blank">sensor-data-flask</a></li>
+                    <li>Backend repo: <a href="https://github.com/janpc01/sensor-backend" target="_blank">sensor-backend</a> (not up-to-date, need to push code from lab machine)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>CO2 Sensor Project</h3>
+                <p>Info</p>
             </div>
         </section>
 
-        <!-- Ideas Section -->
-        <section class="scrum-section">
-            <h2>Ideas for Future</h2>
-            <div class="scrum-board">
-                <div class="column backlog">
-                    <h3>Product Backlog</h3>
+        <section id="future-ideas">
+            <h2>Ideas for Future:</h2>
+            <ul>
+                <li>Custom merchandise shop
                     <ul>
-                        <li>Custom merchandise shop</li>
-                        <li>AI-driven ad generation app</li>
-                        <li>Neural network for ad optimization</li>
+                        <li>Custom mugs, t-shirts, hoodies, etc.</li>
                     </ul>
-                </div>
-                <div class="column sprint-backlog">
-                    <h3>Sprint Backlog</h3>
+                </li>
+                <li>App for generating ads
                     <ul>
-                        <li>Research ad generation frameworks</li>
+                        <li>Takes in prompt → generates script, mp3 or AI voiceover reading script, video demo of how to use site</li>
+                        <li>Use neural networks to apply to making ads
+                            <ul>
+                                <li>Features: type of script generated, type of voice used for voiceover, different languages, animations, etc.</li>
+                                <li>Rewards: number of views, clicks on link, purchases from ad link</li>
+                            </ul>
+                        </li>
                     </ul>
-                </div>
-                <div class="column done">
-                    <h3>Done</h3>
-                    <ul>
-                        <li>Brainstorm features</li>
-                    </ul>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
     </main>
     <footer>
-        <p>Created by [Your Name]</p>
+        <p>© 2024 Project Overview</p>
     </footer>
 </body>
 </html>
+
