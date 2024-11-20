@@ -6,96 +6,61 @@
     <title>Jan's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="dark-mode">
     <nav>
-        <div class="nav-content">
-            <div class="logo">JPC</div>
-            <div class="nav-controls">
-                <button id="darkModeToggle" class="control-btn">
-                    <i class="fas fa-moon light-mode"></i>
-                    <i class="fas fa-sun dark-mode"></i>
-                </button>
-            </div>
-
+        <div class="container">
+            <span class="logo">JC</span>
+            <button id="darkModeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon light-mode"></i>
+                <i class="fas fa-sun dark-mode"></i>
+            </button>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
+    <header>
+        <div class="container">
             <h1>Jan Czarnecki</h1>
-            <p class="typewriter">Full Stack Developer & Tech Enthusiast</p>
+            <p>Full Stack Developer</p>
             <div class="social-links">
-                <a href="https://github.com/janpc01" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/janpc01" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/jan-k-czarnecki" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
     </header>
 
-    <main>
-        <div class="projects-filter">
+    <main class="container">
+        <div class="projects-header">
+            <h2>Projects</h2>
+            <button id="addProjectBtn" class="primary-btn">
+                <i class="fas fa-plus"></i> Add Project
+            </button>
+        </div>
+
+        <div class="filter-tabs">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="in-progress">In Progress</button>
             <button class="filter-btn" data-filter="completed">Completed</button>
-            <button class="filter-btn" data-filter="future">Future Ideas</button>
         </div>
 
-        <div class="projects-grid">
-            <!-- Project cards will be dynamically inserted here -->
-        </div>
+        <div class="projects-grid"></div>
     </main>
 
+    <div id="projectModal" class="modal">
+        <!-- Modal content will be added via JavaScript -->
+    </div>
+
     <footer>
-        <p>© 2024 Jan Czarnecki. Built with 💻 and ☕</p>
+        <div class="container">
+            <p>© 2024 Jan Czarnecki</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-
-    <button id="addProjectBtn" class="add-project-btn">
-        <i class="fas fa-plus"></i> Add Project
-    </button>
-
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Project</h2>
-            <form id="newProjectForm">
-                <div class="form-group">
-                    <label for="title">Project Title</label>
-                    <input type="text" id="title" required>
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select id="status" required>
-                        <option value="in-progress">In Progress</option>
-                        <option value="completed">Completed</option>
-                        <option value="future">Future Ideas</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="progress">Progress (%)</label>
-                    <input type="number" id="progress" min="0" max="100" value="0">
-                </div>
-                <div class="form-group">
-                    <label for="tags">Tags (comma-separated)</label>
-                    <input type="text" id="tags" placeholder="Angular, Node.js, MongoDB">
-                </div>
-                <div class="form-group">
-                    <label for="demoLink">Demo URL</label>
-                    <input type="url" id="demoLink">
-                </div>
-                <div class="form-group">
-                    <label for="githubLink">GitHub URL</label>
-                    <input type="url" id="githubLink">
-                </div>
-                <button type="submit" class="submit-btn">Add Project</button>
-            </form>
-        </div>
-    </div>
 </body>
 </html>
