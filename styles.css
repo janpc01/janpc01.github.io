@@ -134,14 +134,10 @@ hr {
   }
   
   .temple-theme .content {
-    background: #000088;
+    background: var(--temple-bg);
     border: 2px solid var(--temple-border);
     padding: 20px;
     margin: 20px 0;
-  }
-  
-  .temple-theme .content:nth-child(even) {
-    background: #000066;
   }
   
   .temple-theme .content * {
