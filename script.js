@@ -9,7 +9,8 @@ function getRandomColor() {
 function applyRandomColors() {
     if (!document.body.classList.contains('temple-theme')) return;
     
-    const textNodes = document.createTreeWalker(
+    // Select all text nodes
+    const walker = document.createTreeWalker(
         document.body,
         NodeFilter.SHOW_TEXT,
         null,
@@ -17,11 +18,17 @@ function applyRandomColors() {
     );
 
     let node;
-    while (node = textNodes.nextNode()) {
+    while (node = walker.nextNode()) {
+        // Skip if parent is script or style
+        if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') continue;
+        
+        // Create a span for each letter
         const span = document.createElement('span');
         span.innerHTML = Array.from(node.textContent).map(char => 
             char === ' ' ? ' ' : `<span style="color: ${getRandomColor()}">${char}</span>`
         ).join('');
+        
+        // Replace the text node with our colored span
         node.parentNode.replaceChild(span, node);
     }
 }
@@ -33,11 +40,13 @@ function toggleTempleTheme() {
     if (body.classList.contains('temple-theme')) {
         applyRandomColors();
     } else {
-        // Reset all spans back to normal text
-        document.querySelectorAll('.temple-theme span span').forEach(span => {
+        // Reset all colored spans back to normal text
+        document.querySelectorAll('span > span').forEach(span => {
             const text = span.textContent;
-            const textNode = document.createTextNode(text);
-            span.parentNode.replaceChild(textNode, span);
+            if (span.parentNode.childNodes.length === 1) {
+                const textNode = document.createTextNode(text);
+                span.parentNode.parentNode.replaceChild(textNode, span.parentNode);
+            }
         });
     }
     

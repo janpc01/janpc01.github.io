@@ -66,7 +66,7 @@ hr {
 
 /* TempleOS Theme Variables */
 :root {
-    --temple-bg: #0000AA; /* Pure blue */
+    --temple-bg: #FFFFFF; /* Pure blue */
     --temple-text: #FFFFFF; /* White text */
     --temple-heading: #FF0000; /* Bright red */
     --temple-link: #55FF55; /* Green links */
@@ -101,13 +101,7 @@ hr {
   
   /* TempleOS Theme Classes */
   .temple-theme {
-    background: repeating-linear-gradient(
-      0deg,
-      var(--temple-bg) 0px,
-      var(--temple-bg) 200px,
-      #000055 200px,
-      #000055 400px
-    );
+    background-color: var(--temple-bg);
     color: var(--temple-text) !important;
     font-family: "Courier New", monospace !important;
     padding: 20px;
