@@ -1,174 +1,164 @@
 ---
 layout: default
+title: "Jan K. Czarnecki"
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jan</title>
-    <link rel="stylesheet" href="{{ 'styles.css' | relative_url }}">
-</head>
-<body>
-    <h1>Jan K. Czarnecki</h1>
-    <p>Software Developer | Bachelor of Science in Physics and Computing Science</p>
-    
-    <hr>
+<h1>Jan K. Czarnecki</h1>
+<p>Software Developer | Bachelor of Science in Physics and Computing Science</p>
 
-    <div class="content">
-        <h2>About Me</h2>
-        <p>Currently deploying a full-stack MEAN (MongoDB, Express, Angular, Node.js) application using Azure Static Web Apps for the frontend, Azure App Service for the backend API, and Azure Cosmos DB for the database. Using GitHub Actions for CI/CD automation.</p>
+<hr>
 
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://kyosocards.com/" target="_blank">KyosoCards</a> – A website for creating and buying custom Judo sports cards</li>
-            <li><a href="https://sensor-data-flask.vercel.app/" target="_blank">SensorData</a> – A website that displays live sensor data collected by an Arduino</li>
-        </ul>
+<div class="content">
+    <h2>About Me</h2>
+    <p>Currently deploying a full-stack MEAN (MongoDB, Express, Angular, Node.js) application using Azure Static Web Apps for the frontend, Azure App Service for the backend API, and Azure Cosmos DB for the database. Using GitHub Actions for CI/CD automation.</p>
 
-        <h2>Blog</h2>
-        <ul>
-            {% for post in site.posts %}
-            <li>
-                <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a> - {{ post.title }}
-            </li>
-            {% endfor %}
-        </ul>
+    <h2>Projects</h2>
+    <ul>
+        <li><a href="https://kyosocards.com/" target="_blank">KyosoCards</a> – A website for creating and buying custom Judo sports cards</li>
+        <li><a href="https://sensor-data-flask.vercel.app/" target="_blank">SensorData</a> – A website that displays live sensor data collected by an Arduino</li>
+    </ul>
 
-        <h2>Reading List</h2>
-        <ul>
-            <li>
-                <strong>Currently Reading:</strong>
-                <ul>
-                    <li>"Crime and Punishment" by Fyodor Dostoevsky</li>
-                    <li>"Clean Code" by Robert C. Martin</li>
-                    <li>"Mathew's Gospel" by St. Matthew</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Some of my favorite books in no particular order:</strong>
-                <ul>
-                    <li>"East of Eden" by John Steinbeck</li>
-                    <li>"Solaris" by Stanisław Lem</li>
-                    <li>"The Hitchhiker's Guide to the Galaxy" by Douglas Adams</li>
-                    <li>"Heart of Darkness" by Joseph Conrad</li>
-                    <li>"The Manuscript Found in Saragossa" by Jan Potocki</li>
-                    <li>"The Screwtape Letters" by C.S. Lewis</li>
-                    <li>"1984" by George Orwell</li>
-                    <li>"Animal Farm" by George Orwell</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Planning to Read:</strong>
-                <ul>
-                    <li>"Principles for Dealing with the Changing World Order" by Ray Dalio</li>
-                    <li>"The Art of Computer Programming" by Donald E. Knuth</li>
-                    <li>"The Pragmatic Programmer" by David Thomas & Andrew Hunt</li>
-                    <li>"Design Patterns" by Erich Gamma et al.</li>
-                </ul>
-            </li>
-        </ul>
+    <h2>Blog</h2>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a> - {{ post.title }}
+        </li>
+        {% endfor %}
+    </ul>
 
-        <h2>Work Experience</h2>
-        <ul>
-            <li>
-                <strong>Machine Learning Developer Intern</strong> - Kinaxis, Ottawa (Jan 2023 - Aug 2023)
-                <ul>
-                    <li>Implemented, tested, and evaluated machine learning solutions for supply chain management</li>
-                    <li>Analyzed large datasets and utilized statistical techniques to improve ML algorithms</li>
-                    <li>Incorporated integration tests to prevent regressions</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Software Engineer Intern</strong> - German Research Center for AI (May 2021 - Aug 2021)
-                <ul>
-                    <li>Built CO₂ emission measurement device for soil analysis</li>
-                    <li>Developed hardware and software components, analyzed data with Python</li>
-                    <li>Collaborated with Innotech Alberta for data collection</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Research Assistant</strong> - University of Alberta (May 2020 - Aug 2020)
-                <ul>
-                    <li>Conducted research on Dansgaard-Oeschger climate events</li>
-                    <li>Created mathematical models using Python for climate phenomena analysis</li>
-                    <li>Analyzed 120,000 years of climate data using delayed differential equations</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Software Developer Intern</strong> - Advanis, Edmonton (July 2018 - August 2018)
-                <ul>
-                    <li>Learned web development</li>
-                    <li>Started to learn about machine learning</li>
-                </ul>
-            </li>
-        </ul>
+    <h2>Reading List</h2>
+    <ul>
+        <li>
+            <strong>Currently Reading:</strong>
+            <ul>
+                <li>"Crime and Punishment" by Fyodor Dostoevsky</li>
+                <li>"Clean Code" by Robert C. Martin</li>
+                <li>"Mathew's Gospel" by St. Matthew</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Some of my favorite books in no particular order:</strong>
+            <ul>
+                <li>"East of Eden" by John Steinbeck</li>
+                <li>"Solaris" by Stanisław Lem</li>
+                <li>"The Hitchhiker's Guide to the Galaxy" by Douglas Adams</li>
+                <li>"Heart of Darkness" by Joseph Conrad</li>
+                <li>"The Manuscript Found in Saragossa" by Jan Potocki</li>
+                <li>"The Screwtape Letters" by C.S. Lewis</li>
+                <li>"1984" by George Orwell</li>
+                <li>"Animal Farm" by George Orwell</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Planning to Read:</strong>
+            <ul>
+                <li>"Principles for Dealing with the Changing World Order" by Ray Dalio</li>
+                <li>"The Art of Computer Programming" by Donald E. Knuth</li>
+                <li>"The Pragmatic Programmer" by David Thomas & Andrew Hunt</li>
+                <li>"Design Patterns" by Erich Gamma et al.</li>
+            </ul>
+        </li>
+    </ul>
 
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>
-                <strong>Programming:</strong> C, C++, JavaScript, HTML, CSS, Python, React, SQL, Azure, Node.js, Django, Java, TensorFlow, PyTorch, Keras
-            </li>
-            <li>
-                <strong>Tools:</strong> LaTeX, Illustrator, Photoshop, Git, GitHub
-            </li>
-        </ul>
+    <h2>Work Experience</h2>
+    <ul>
+        <li>
+            <strong>Machine Learning Developer Intern</strong> - Kinaxis, Ottawa (Jan 2023 - Aug 2023)
+            <ul>
+                <li>Implemented, tested, and evaluated machine learning solutions for supply chain management</li>
+                <li>Analyzed large datasets and utilized statistical techniques to improve ML algorithms</li>
+                <li>Incorporated integration tests to prevent regressions</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Software Engineer Intern</strong> - German Research Center for AI (May 2021 - Aug 2021)
+            <ul>
+                <li>Built CO₂ emission measurement device for soil analysis</li>
+                <li>Developed hardware and software components, analyzed data with Python</li>
+                <li>Collaborated with Innotech Alberta for data collection</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Research Assistant</strong> - University of Alberta (May 2020 - Aug 2020)
+            <ul>
+                <li>Conducted research on Dansgaard-Oeschger climate events</li>
+                <li>Created mathematical models using Python for climate phenomena analysis</li>
+                <li>Analyzed 120,000 years of climate data using delayed differential equations</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Software Developer Intern</strong> - Advanis, Edmonton (July 2018 - August 2018)
+            <ul>
+                <li>Learned web development</li>
+                <li>Started to learn about machine learning</li>
+            </ul>
+        </li>
+    </ul>
 
-        <h2>Certifications & Achievements</h2>
-        <ul>
-            <li>Coursera Certifications:
-                <ul>
-                    <li>Neural Networks:
-                        <ul>
-                            <li><a href="https://www.coursera.org/account/accomplishments/verify/7DUJXXREZKMH">Neural Networks and Deep Learning</a> - DeepLearning.AI</li>
-                            <li><a href="https://www.coursera.org/account/accomplishments/verify/BLMSDWB73BLW">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</a> - DeepLearning.AI</li>
-                        </ul>
-                    </li>
-                    <li>Supervised Learning:
-                        <ul>
-                            <li><a href="https://www.coursera.org/account/accomplishments/verify/CKJUZCEZH6FX">Supervised Machine Learning: Regression and Classification</a> - Stanford University</li>
-                        </ul>
-                    </li>
-                    <li>Reinforcement Learning:
-                        <ul>
-                            <li><a href="https://www.coursera.org/account/accomplishments/certificate/XZGD5WSNEVJP">Fundamentals of Reinforcement Learning</a> - University of Alberta</li>
-                            <li><a href="https://www.coursera.org/account/accomplishments/certificate/77MKTAYFNTQC">Sample-based Learning Methods</a> - University of Alberta</li>
-                            <li><a href="https://www.coursera.org/account/accomplishments/certificate/936VEMYZ257X">Sample-based Learning Methods</a> - University of Alberta</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Jason Lang Scholarship</li>
-            <li>Alexander Rutherford Scholarship</li>
-            <li>Judo Black Belt - <a href="https://www.judoinside.com/judoka/118559/Jan_Prus_Czarnecki/judo-career">6x Provincial Champion and Canadian National Championships Cadets Bronze Medalist</a></li>
-            <li>NCCP Judo Dojo Instructor teaching kids 8-12 years old at <a href="https://www.kodokwaijudo.com/about-us/">Kodokwai Judo Club</a></li>
-        </ul>
+    <h2>Technical Skills</h2>
+    <ul>
+        <li>
+            <strong>Programming:</strong> C, C++, JavaScript, HTML, CSS, Python, React, SQL, Azure, Node.js, Django, Java, TensorFlow, PyTorch, Keras
+        </li>
+        <li>
+            <strong>Tools:</strong> LaTeX, Illustrator, Photoshop, Git, GitHub
+        </li>
+    </ul>
 
-        <h2>Languages</h2>
-        <ul>
-            <li><strong>Fluent:</strong> English, Polish</li>
-            <li><strong>Intermediate:</strong> French, German</li>
-            <li><strong>Beginner:</strong> Russian</li>
-        </ul>
+    <h2>Certifications & Achievements</h2>
+    <ul>
+        <li>Coursera Certifications:
+            <ul>
+                <li>Neural Networks:
+                    <ul>
+                        <li><a href="https://www.coursera.org/account/accomplishments/verify/7DUJXXREZKMH">Neural Networks and Deep Learning</a> - DeepLearning.AI</li>
+                        <li><a href="https://www.coursera.org/account/accomplishments/verify/BLMSDWB73BLW">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</a> - DeepLearning.AI</li>
+                    </ul>
+                </li>
+                <li>Supervised Learning:
+                    <ul>
+                        <li><a href="https://www.coursera.org/account/accomplishments/verify/CKJUZCEZH6FX">Supervised Machine Learning: Regression and Classification</a> - Stanford University</li>
+                    </ul>
+                </li>
+                <li>Reinforcement Learning:
+                    <ul>
+                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/XZGD5WSNEVJP">Fundamentals of Reinforcement Learning</a> - University of Alberta</li>
+                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/77MKTAYFNTQC">Sample-based Learning Methods</a> - University of Alberta</li>
+                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/936VEMYZ257X">Sample-based Learning Methods</a> - University of Alberta</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Jason Lang Scholarship</li>
+        <li>Alexander Rutherford Scholarship</li>
+        <li>Judo Black Belt - <a href="https://www.judoinside.com/judoka/118559/Jan_Prus_Czarnecki/judo-career">6x Provincial Champion and Canadian National Championships Cadets Bronze Medalist</a></li>
+        <li>NCCP Judo Dojo Instructor teaching kids 8-12 years old at <a href="https://www.kodokwaijudo.com/about-us/">Kodokwai Judo Club</a></li>
+    </ul>
 
-        <h2>Hobbies</h2>
-        <ul>
-            <li><strong>Judo</strong></li>
-            <li><strong>Skiing</strong></li>
-            <li><strong>Chess</strong></li>
-            <li><strong>Sailing</strong></li>
-        </ul>
+    <h2>Languages</h2>
+    <ul>
+        <li><strong>Fluent:</strong> English, Polish</li>
+        <li><strong>Intermediate:</strong> French, German</li>
+        <li><strong>Beginner:</strong> Russian</li>
+    </ul>
 
-        <h2>Contact</h2>
-        <p>Email me at: <a href="mailto:janpc01@gmail.com">janpc01@gmail.com</a></p>
-        <p>Or find me on: 
-            <a href="https://linkedin.com/in/jan-k-czarnecki/" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/janpc01" target="_blank">GitHub</a> | 
-            <a href="https://instagram.com/janpc__" target="_blank">Instagram</a>
-        </p>
-    </div>
+    <h2>Hobbies</h2>
+    <ul>
+        <li><strong>Judo</strong></li>
+        <li><strong>Skiing</strong></li>
+        <li><strong>Chess</strong></li>
+        <li><strong>Sailing</strong></li>
+    </ul>
 
-    <div class="footer">
-        <p>&copy; 2024 Jan K. Czarnecki. All rights reserved.</p>
-    </div>
-</body>
-</html>
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:janpc01@gmail.com">janpc01@gmail.com</a></p>
+    <p>Or find me on: 
+        <a href="https://linkedin.com/in/jan-k-czarnecki/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/janpc01" target="_blank">GitHub</a> | 
+        <a href="https://instagram.com/janpc__" target="_blank">Instagram</a>
+    </p>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Jan K. Czarnecki. All rights reserved.</p>
+</div>
