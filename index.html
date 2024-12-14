@@ -3,64 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan's Portfolio</title>
+    <title>Your Name</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="dark-mode">
-    <nav>
-        <div class="container">
-            <span class="logo">JC</span>
-            <button id="darkModeToggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon light-mode"></i>
-                <i class="fas fa-sun dark-mode"></i>
-            </button>
-        </div>
-    </nav>
+<body>
+    <h1>Your Full Name</h1>
+    <p>A short, one-liner description of who you are, e.g., "Software Developer | Machine Learning Enthusiast | Writer".</p>
+    
+    <hr>
 
-    <header>
-        <div class="container">
-            <h1>Jan Czarnecki</h1>
-            <p>Full Stack Developer</p>
-            <div class="social-links">
-                <a href="https://github.com/janpc01" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/jan-k-czarnecki" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
-    </header>
+    <div class="content">
+        <h2>About Me</h2>
+        <p>This is where you describe yourself in more detail. For example: "I’m a [role/profession] currently working on [projects/interests]. I love [hobbies or passions]."</p>
 
-    <main class="container">
-        <div class="projects-header">
-            <h2>Projects</h2>
-            <button id="addProjectBtn" class="primary-btn">
-                <i class="fas fa-plus"></i> Add Project
-            </button>
-        </div>
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="https://example.com/project1" target="_blank">Project 1</a> – A short description of what this project is about.</li>
+            <li><a href="https://example.com/project2" target="_blank">Project 2</a> – Another project or work highlight.</li>
+            <li><a href="https://example.com/project3" target="_blank">Project 3</a> – You can add as many as you want here.</li>
+        </ul>
 
-        <div class="filter-tabs">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="in-progress">In Progress</button>
-            <button class="filter-btn" data-filter="completed">Completed</button>
-        </div>
+        <h2>Writing</h2>
+        <ul>
+            <li><a href="https://example.com/blog1" target="_blank">"Blog Post 1"</a> – A brief title or description of your blog post.</li>
+            <li><a href="https://example.com/blog2" target="_blank">"Blog Post 2"</a> – Another example post.</li>
+        </ul>
 
-        <div class="projects-grid"></div>
-    </main>
-
-    <div id="projectModal" class="modal">
-        <!-- Modal content will be added via JavaScript -->
+        <h2>Contact</h2>
+        <p>Email me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Or find me on: 
+            <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a> | 
+            <a href="https://github.com/yourhandle" target="_blank">GitHub</a> | 
+            <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a>
+        </p>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2024 Jan Czarnecki</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </div>
 </body>
 </html>
