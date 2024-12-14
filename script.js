@@ -16,31 +16,41 @@ function applyRandomColors() {
     const walker = document.createTreeWalker(
         document.body,
         NodeFilter.SHOW_TEXT,
-        null,
+        {
+            acceptNode: function(node) {
+                // Skip script and style tags
+                if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                // Skip empty text nodes
+                if (node.textContent.trim() === '') {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        },
         false
     );
 
     let node;
     while ((node = walker.nextNode())) {
-        if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') continue;
-
         const text = node.textContent;
-        const coloredHTML = Array.from(text).map(char => {
-            if (char.trim() === '') return char; // Preserve spaces
-            return `<span style="color: ${getRandomColor()}">${char}</span>`;
-        }).join('');
-
-        // Create a temporary wrapper span
         const wrapper = document.createElement('span');
-        wrapper.innerHTML = coloredHTML;
+        wrapper.className = 'temple-text';
+        wrapper.innerHTML = Array.from(text).map(char => {
+            if (char === ' ') return ' ';
+            return `<span class="temple-letter" style="color: ${getRandomColor()}">${char}</span>`;
+        }).join('');
         node.parentNode.replaceChild(wrapper, node);
     }
 }
 
 function resetColors() {
-    document.querySelectorAll('span.temple-letter').forEach(span => {
-        const textNode = document.createTextNode(span.textContent);
-        span.parentNode.replaceChild(textNode, span);
+    // Find all temple-text wrappers
+    document.querySelectorAll('.temple-text').forEach(wrapper => {
+        const text = wrapper.textContent;
+        const textNode = document.createTextNode(text);
+        wrapper.parentNode.replaceChild(textNode, wrapper);
     });
 }
 
