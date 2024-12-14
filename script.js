@@ -1,15 +1,18 @@
+// TempleOS 16 colors
 function getRandomColor() {
     const colors = [
-        '#FFFFFF', '#55FF55', '#FF5555', '#5555FF', 
-        '#FFFF55', '#FF55FF', '#55FFFF', '#AAAA00'
+        '#000000', '#0000AA', '#00AA00', '#00AAAA',
+        '#AA0000', '#AA00AA', '#AA5500', '#AAAAAA',
+        '#555555', '#5555FF', '#55FF55', '#55FFFF',
+        '#FF5555', '#FF55FF', '#FFFF55', '#FFFFFF'
     ];
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
 function applyRandomColors() {
     if (!document.body.classList.contains('temple-theme')) return;
-    
-    // Select all text nodes
+
+    // Walk through all text nodes
     const walker = document.createTreeWalker(
         document.body,
         NodeFilter.SHOW_TEXT,
@@ -18,49 +21,50 @@ function applyRandomColors() {
     );
 
     let node;
-    while (node = walker.nextNode()) {
-        // Skip if parent is script or style
+    while ((node = walker.nextNode())) {
         if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') continue;
-        
-        // Create a span for each letter
-        const span = document.createElement('span');
-        span.innerHTML = Array.from(node.textContent).map(char => 
-            char === ' ' ? ' ' : `<span style="color: ${getRandomColor()}">${char}</span>`
-        ).join('');
-        
-        // Replace the text node with our colored span
-        node.parentNode.replaceChild(span, node);
+
+        const text = node.textContent;
+        const coloredHTML = Array.from(text).map(char => {
+            if (char.trim() === '') return char; // Preserve spaces
+            return `<span style="color: ${getRandomColor()}">${char}</span>`;
+        }).join('');
+
+        // Create a temporary wrapper span
+        const wrapper = document.createElement('span');
+        wrapper.innerHTML = coloredHTML;
+        node.parentNode.replaceChild(wrapper, node);
     }
+}
+
+function resetColors() {
+    document.querySelectorAll('span.temple-letter').forEach(span => {
+        const textNode = document.createTextNode(span.textContent);
+        span.parentNode.replaceChild(textNode, span);
+    });
 }
 
 function toggleTempleTheme() {
     const body = document.body;
     body.classList.toggle('temple-theme');
-    
+
     if (body.classList.contains('temple-theme')) {
         applyRandomColors();
     } else {
-        // Reset all colored spans back to normal text
-        document.querySelectorAll('span > span').forEach(span => {
-            const text = span.textContent;
-            if (span.parentNode.childNodes.length === 1) {
-                const textNode = document.createTextNode(text);
-                span.parentNode.parentNode.replaceChild(textNode, span.parentNode);
-            }
-        });
+        resetColors();
     }
-    
+
     localStorage.setItem('templeTheme', body.classList.contains('temple-theme'));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('templeTheme');
-    
+
     if (savedTheme === 'true') {
         document.body.classList.add('temple-theme');
         applyRandomColors();
     }
-    
+
     themeToggle.addEventListener('click', toggleTempleTheme);
 });
