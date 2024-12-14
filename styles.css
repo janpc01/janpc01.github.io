@@ -84,7 +84,7 @@ hr {
     right: 10px;
     padding: 5px 8px;
     background: var(--temple-border);
-    color: var(--temple-bg);
+    color: inherit;
     border: 1px solid var(--temple-heading);
     font-family: "Courier New", monospace;
     cursor: pointer;
@@ -95,13 +95,14 @@ hr {
   
   .theme-toggle:hover {
     background: var(--temple-hover);
-    color: var(--temple-bg);
+    color: inherit;
     border: 1px solid var(--temple-hover);
   }
   
   /* TempleOS Theme Classes */
   .temple-theme {
-    background-color: #000000;
+    background-color: #FFFFFF;
+    color: inherit;
     font-family: "Courier New", monospace !important;
     padding: 20px;
     text-shadow: none;
@@ -149,12 +150,16 @@ hr {
   
   /* ASCII Art Styling */
   .temple-theme .ascii-art {
-    font-family: "Courier New", monospace;
+    font-family: monospace;
     white-space: pre;
     color: var(--temple-highlight);
-    margin: 20px 0;
+    margin: 20px auto;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1;
+    display: block;
+    width: fit-content;
+    overflow-x: auto;
+    max-width: 100%;
   }
   
   /* Blinking Text */
@@ -177,5 +182,40 @@ hr {
     background-color: var(--temple-bg);
     color: var(--temple-text);
     text-align: center;
+  }
+  
+  .temple-theme .rotating-art {
+    animation: rotate 4s linear infinite;
+    display: inline-block;
+  }
+  
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  
+  /* Make sure the ASCII art maintains its shape */
+  .temple-theme .rotating-art {
+    font-family: monospace;
+    white-space: pre;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    transform-origin: center;
+  }
+  
+  .temple-theme body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .temple-theme .content {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
