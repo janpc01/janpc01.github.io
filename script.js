@@ -12,14 +12,15 @@ function getRandomColor() {
 function applyRandomColors() {
     if (!document.body.classList.contains('temple-theme')) return;
 
-    // Walk through all text nodes
     const walker = document.createTreeWalker(
         document.body,
         NodeFilter.SHOW_TEXT,
         {
             acceptNode: function(node) {
-                // Skip script and style tags
-                if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') {
+                // Skip script, style tags, and the theme toggle button
+                if (node.parentNode.tagName === 'SCRIPT' || 
+                    node.parentNode.tagName === 'STYLE' || 
+                    node.parentNode.classList.contains('theme-toggle')) {
                     return NodeFilter.FILTER_REJECT;
                 }
                 // Skip empty text nodes
@@ -46,7 +47,6 @@ function applyRandomColors() {
 }
 
 function resetColors() {
-    // Find all temple-text wrappers
     document.querySelectorAll('.temple-text').forEach(wrapper => {
         const text = wrapper.textContent;
         const textNode = document.createTextNode(text);
