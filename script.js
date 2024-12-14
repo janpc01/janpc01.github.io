@@ -17,10 +17,9 @@ function applyRandomColors() {
         NodeFilter.SHOW_TEXT,
         {
             acceptNode: function(node) {
-                // Skip script, style tags, and the theme toggle button
+                // Skip script and style tags
                 if (node.parentNode.tagName === 'SCRIPT' || 
-                    node.parentNode.tagName === 'STYLE' || 
-                    node.parentNode.classList.contains('theme-toggle')) {
+                    node.parentNode.tagName === 'STYLE') {
                     return NodeFilter.FILTER_REJECT;
                 }
                 // Skip empty text nodes

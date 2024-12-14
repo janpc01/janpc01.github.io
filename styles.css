@@ -107,6 +107,16 @@ hr {
     text-shadow: none;
   }
   
+  .temple-theme * {
+    font-family: "Courier New", monospace !important;
+  }
+  
+  .temple-theme .content {
+    background: transparent;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
   .temple-theme h1,
   .temple-theme h2 {
     border-bottom: 1px solid var(--temple-border);
@@ -127,17 +137,6 @@ hr {
     border: none;
     border-top: 2px solid var(--temple-border) !important;
     margin: 15px 0;
-  }
-  
-  .temple-theme .content {
-    background: var(--temple-bg);
-    border: 2px solid var(--temple-border);
-    padding: 20px;
-    margin: 20px 0;
-  }
-  
-  .temple-theme .content * {
-    display: inline;
   }
   
   .temple-theme .footer {
