@@ -63,3 +63,60 @@ hr {
     margin-top: 20px;
     width: 100%;
 }
+
+/* TempleOS Theme Variables */
+:root {
+  --temple-bg: #0000AA;
+  --temple-text: #FFFFFF;
+  --temple-heading: #FF0000;
+  --temple-link: #55FF55;
+  --temple-border: #FFFFFF;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: 2px solid #666;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* TempleOS Theme Classes */
+.temple-theme {
+  background-color: var(--temple-bg) !important;
+  color: var(--temple-text) !important;
+  font-family: "Courier New", monospace !important;
+  border: 2px solid var(--temple-border);
+  padding: 20px;
+}
+
+.temple-theme h1,
+.temple-theme h2 {
+  color: var(--temple-heading) !important;
+  border-bottom: 1px solid var(--temple-border);
+  padding-bottom: 5px;
+}
+
+.temple-theme a {
+  color: var(--temple-link) !important;
+}
+
+.temple-theme hr {
+  border-color: var(--temple-border) !important;
+}
+
+.temple-theme .content {
+  border: 1px solid var(--temple-border);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.temple-theme .footer {
+  border-top: 1px solid var(--temple-border);
+  color: var(--temple-text) !important;
+}
