@@ -78,23 +78,23 @@ hr {
   /* Theme Toggle Button */
   .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
     background: var(--temple-border);
     color: var(--temple-bg);
-    border: 2px solid var(--temple-heading);
+    border: 1px solid var(--temple-heading);
     font-family: "Courier New", monospace;
     cursor: pointer;
     z-index: 1000;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
   }
   
   .theme-toggle:hover {
     background: var(--temple-hover);
     color: var(--temple-bg);
-    border: 2px solid var(--temple-hover);
+    border: 1px solid var(--temple-hover);
   }
   
   /* TempleOS Theme Classes */
