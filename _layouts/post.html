@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Jan K. Czarnecki</title>
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body>
+    <div class="content">
+        <h1>{{ page.title }}</h1>
+        <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+        
+        {{ content }}
+        
+        <p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; {{ site.time | date: '%Y' }} Jan K. Czarnecki. All rights reserved.</p>
+    </div>
+</body>
+</html>
