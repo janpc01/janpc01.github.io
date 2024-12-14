@@ -54,3 +54,12 @@ hr {
     text-align: center;
     margin-top: 40px;
 }
+
+.comments {
+    margin: 32px 0;
+}
+
+.giscus {
+    margin-top: 20px;
+    width: 100%;
+}
