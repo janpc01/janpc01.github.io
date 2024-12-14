@@ -73,6 +73,8 @@ hr {
     --temple-border: #FFFFFF; /* White border */
     --temple-highlight: #00FFFF; /* Cyan highlight */
     --temple-hover: #FFFF00; /* Bright yellow hover effect */
+    --temple-colors: #000000, #0000AA, #00AA00, #00AAAA, #AA0000, #AA00AA, #AAAA00, #AAAAAA,
+                     #555555, #5555FF, #55FF55, #55FFFF, #FF5555, #FF55FF, #FFFF55, #FFFFFF;
   }
   
   /* Theme Toggle Button */
@@ -99,10 +101,15 @@ hr {
   
   /* TempleOS Theme Classes */
   .temple-theme {
-    background-color: var(--temple-bg) !important;
+    background: repeating-linear-gradient(
+      0deg,
+      var(--temple-bg) 0px,
+      var(--temple-bg) 200px,
+      #000055 200px,
+      #000055 400px
+    );
     color: var(--temple-text) !important;
     font-family: "Courier New", monospace !important;
-    border: 2px solid var(--temple-border);
     padding: 20px;
     text-shadow: none;
   }
@@ -133,11 +140,31 @@ hr {
   }
   
   .temple-theme .content {
-    border: 2px solid var(--temple-highlight);
-    background-color: var(--temple-bg);
-    color: var(--temple-text);
-    padding: 15px;
+    background: #000088;
+    border: 2px solid var(--temple-border);
+    padding: 20px;
     margin: 20px 0;
+  }
+  
+  .temple-theme .content:nth-child(even) {
+    background: #000066;
+  }
+  
+  .temple-theme .content * {
+    display: inline-block;
+  }
+  
+  .temple-theme .content *::first-letter {
+    animation: colorCycle 0.5s infinite;
+  }
+  
+  @keyframes colorCycle {
+    0% { color: #FFFFFF; }
+    20% { color: #55FF55; }
+    40% { color: #FF5555; }
+    60% { color: #5555FF; }
+    80% { color: #FFFF55; }
+    100% { color: #FFFFFF; }
   }
   
   .temple-theme .footer {
