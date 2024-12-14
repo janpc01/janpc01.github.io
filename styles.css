@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
+         url('https://fonts.cdnfonts.com/s/19869/HelveticaNeueBold.woff') format('woff');
+}
+
 body {
-    font-family: Georgia, serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
     line-height: 1.6;
     margin: 40px auto;
     max-width: 650px;
@@ -11,7 +19,7 @@ body {
 h1, h2 {
     margin: 0;
     padding: 0;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 a {
@@ -39,4 +47,3 @@ hr {
     text-align: center;
     margin-top: 40px;
 }
-
