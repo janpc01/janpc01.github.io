@@ -46,21 +46,7 @@ KyosoCards is deployed and accessible at [kyosocards.com](https://kyosocards.com
 
 ### Environment Configuration
 - Production environment variables managed through Azure
-- Secure secrets handling using Azure Key Vault
-- Multiple staging environments for testing
-- Automated rollbacks available if needed
-
-### Monitoring and Analytics
-- Azure Application Insights integration
-- Real-time performance monitoring
-- User behavior analytics
-- Error tracking and logging
-
-### Security Features
-- Azure DDoS protection
-- Automated SSL/TLS certificate management
-- Web application firewall (WAF)
-- Regular security audits and updates
+- Secure secrets handling using Azure App Configuration
 
 ---
 
@@ -237,15 +223,15 @@ client/
   - Add/remove items from the cart.
   - Update quantities and calculate totals.
 
-### **Storage Service**
-- **File**: `storage.service.ts`
-- **Features**:
-  - Manage token and cart storage in localStorage.
-
 ### **Email Service**
 - **File**: `email.service.ts`
 - **Features**:
   - Send emails via Email Service.
+
+### **Storage Service**
+- **File**: `storage.service.ts`
+- **Features**:
+  - Manage token and cart storage in localStorage.
 
 ---
 
@@ -254,6 +240,7 @@ client/
 - **Authentication**: JWT Token.
 - **Payment Integration**: Stripe API.
 - **Storage**: LocalStorage for cart and token management.
+
 ---
 
 <p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
