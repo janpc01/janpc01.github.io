@@ -4,6 +4,8 @@ This project is an Angular-based web application for the website [KyosoCards.com
 Some features include managing custom cards, user authentication, shopping cart functionalities, and order processing. The app features dynamic components, robust validation, and integrates with external services like Stripe for payments.
 
 ---
+<p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
+---
 
 ## **Table of Contents**
 1. [Deployment](#deployment)
@@ -60,6 +62,8 @@ KyosoCards is deployed and accessible at [kyosocards.com](https://kyosocards.com
 - Web application firewall (WAF)
 - Regular security audits and updates
 
+---
+
 ## **Features**
 
 ### **Core Features**
@@ -93,6 +97,8 @@ client/
 ├── package.json
 ├── tsconfig.json
 ```
+
+---
 
 ## **Core Components**
 ### **App Component**
@@ -236,12 +242,18 @@ client/
 - **Features**:
   - Manage token and cart storage in localStorage.
 
+### **Email Service**
+- **File**: `email.service.ts`
+- **Features**:
+  - Send emails via Email Service.
+
+---
+
 ## **Technology Stack**
 - **Frontend**: Angular, TypeScript, HTML, CSS.
 - **Authentication**: JWT Token.
 - **Payment Integration**: Stripe API.
 - **Storage**: LocalStorage for cart and token management.
-
 ---
 
 <p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
