@@ -35,7 +35,7 @@ KyosoCards is deployed and accessible at [kyosocards.com](https://kyosocards.com
 - Frontend application built with Angular
 - Static assets served through Azure's global CDN
 - Automatic deployments triggered on main branch updates
-- Zero-downtime deployments with staging environments
+- Zero-downtime deployments
 
 ### Build and Deploy Process
 1. Code pushed to main branch triggers GitHub Actions workflow
