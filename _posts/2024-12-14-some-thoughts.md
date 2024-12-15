@@ -9,7 +9,7 @@ comments: true
     <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/watch?v=xguam0TKMw8&t=76s&ab_channel=PrinciplesbyRayDalio"
+        src="https://www.youtube.com/embed/xguam0TKMw8"
         title="How to use the past to predict the future and make money"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
