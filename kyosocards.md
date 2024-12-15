@@ -242,3 +242,7 @@ client/
 - **Payment Integration**: Stripe API.
 - **Storage**: LocalStorage for cart and token management.
 
+---
+
+<p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
+
