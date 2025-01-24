@@ -8,11 +8,11 @@ comments: true
 # 2:00pm 
 I want to figure out how to deploy a spring boot app on AWS. To start I'm going to create a very simple app using Spring Initializr (https://start.spring.io/) to generate a basic project structure.
 
-![Spring Initializr](assets/images/Screenshot 2025-01-24 at 2.43.08 PM.png)
+![Spring Initializr](/assets/images/spring-initializr.png)
 
 Simple REST controller that responds to HTTP requests.
 
-![Simple REST controller](assets/images/Screenshot 2025-01-24 at 2.46.35 PM.png)
+![Simple REST controller](/assets/images/rest-controller.png)
 
 Need to make sure that Maven will create a JAR file. In the pom.xml file, I need to make sure that the packaging is set to JAR.
 ```xml
