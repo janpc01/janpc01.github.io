@@ -5,7 +5,6 @@ date: 2025-01-24
 comments: true
 ---
 
-# 2:00pm 
 I want to figure out how to deploy a spring boot app on AWS. I want to do this process correctly, using containers, proper secrets management, and a proper CI/CD pipeline.
 
 ## Initial Spring Boot App
@@ -91,3 +90,4 @@ docker rm <container_id>
 ```
 
 For more info: https://medium.com/@ksaquib/docker-3-ways-to-dockerize-spring-boot-you-need-to-know-now-07d2e2dd7668
+
