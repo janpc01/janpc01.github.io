@@ -38,7 +38,7 @@ Docker is a platform that allows you to build, package and run applications in a
 
 Let's create a simple Dockerfile.
 
-```dockerfile
+```Dockerfile
 # Start with a base image containing Java runtime
 FROM openjdk:21-jdk-slim
 
@@ -89,5 +89,5 @@ To remove a container, run the following command:
 docker rm <container_id>
 ```
 
-For more info: https://medium.com/@ksaquib/docker-3-ways-to-dockerize-spring-boot-you-need-to-know-now-07d2e2dd7668
+For more info: [3 Ways to Dockerize Spring Boot](https://medium.com/@ksaquib/docker-3-ways-to-dockerize-spring-boot-you-need-to-know-now-07d2e2dd7668)
 
