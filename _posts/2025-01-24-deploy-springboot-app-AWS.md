@@ -111,4 +111,22 @@ And now you have a container in ECR!
 
 ## Deploying to AWS ECS
 
-Now I want to deploy the container to AWS ECS.
+Now I want to deploy the container to AWS ECS. ECS is a container orchestration service that allows you to deploy, scale, and manage containers in a cluster. A cluster is a grouping of resources that create an environment for tasks (containers) to run in.
+
+ECS has two launch types:
+- EC2: Launch your tasks on EC2 instances.
+- Fargate: Launch your tasks on AWS Fargate, which is a serverless compute engine that allows you to run containers without having to manage servers.
+
+Let's use Fargate.
+
+First we need to create a ECS service-linked role.
+Using the AWS Management Console:
+- Go to the IAM Console.
+- In the left menu, click Roles → Create role.
+- Choose AWS Service → Elastic Container Service.
+- Select Elastic Container Service use case.
+- Follow the prompts to create the role.
+
+Now we can create a cluster on AWS ECS Console.
+![Create ECS Cluster](/assets/images/create-ecs-cluster.png)
+
