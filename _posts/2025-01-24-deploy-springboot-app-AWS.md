@@ -91,7 +91,7 @@ docker rm <container_id>
 
 For more info: [3 Ways to Dockerize Spring Boot](https://medium.com/@ksaquib/docker-3-ways-to-dockerize-spring-boot-you-need-to-know-now-07d2e2dd7668)
 
-## Deploying to AWS
+## Deploying to AWS ECR
 
 There are many ways to deploy a container to AWS as listed here [The 17 Ways to Run Containers on AWS](https://www.lastweekinaws.com/blog/the-17-ways-to-run-containers-on-aws/).
 
@@ -128,5 +128,16 @@ Using the AWS Management Console:
 - Follow the prompts to create the role.
 
 Now we can create a cluster on AWS ECS Console.
+
 ![Create ECS Cluster](/assets/images/create-ecs-cluster.png)
 
+Next we create a task definition.
+
+![Create Task Definition Part 1](/assets/images/create-ecs-task-p1.png)
+![Create Task Definition Part 2](/assets/images/create-ecs-task-p2.png)
+
+And finally we create a service.
+
+![Create Service](/assets/images/create-ecs-service.png)
+
+You may have to create a security group for the service.
