@@ -8,7 +8,7 @@ comments: true
 I want to figure out how to deploy a spring boot app on AWS. I want to do this process correctly, using containers, proper secrets management, and a proper CI/CD pipeline.
 
 ## Initial Spring Boot App
-To start I'm going to create a very simple app using Spring Initializr (https://start.spring.io/) to generate a basic project structure.
+To start I'm going to create a very simple app using [Spring Initializr](https://start.spring.io/) to generate a basic project structure.
 
 ![Spring Initializr](/assets/images/spring-initializr.png)
 
@@ -91,3 +91,24 @@ docker rm <container_id>
 
 For more info: [3 Ways to Dockerize Spring Boot](https://medium.com/@ksaquib/docker-3-ways-to-dockerize-spring-boot-you-need-to-know-now-07d2e2dd7668)
 
+## Deploying to AWS
+
+There are many ways to deploy a container to AWS as listed here [The 17 Ways to Run Containers on AWS](https://www.lastweekinaws.com/blog/the-17-ways-to-run-containers-on-aws/).
+
+First I will push the container to a registry, namely AWS ECR, so that AWS has access to it.
+
+One big issue I am having with AWS in general is issues with credentials. I don't feel like creating IAM users and roles and such. So I will run everything in the AWS cloud shell.
+
+First I create a container registry in AWS ECR:
+![Create ECR Repository](/assets/images/create-ecr-repository.png)
+
+And then I select the repository and click "Push commands".
+This will show a list of commands to run in the cloud shell.
+The first command is to login to the ECR registry.
+After this we have to upload our project to the cloud shell, which we do by clicking Actions and then "Upload files". Make sure to zip your project first, upload the zip file, and then unzip it with ```unzip <filename>.zip```. After that cd into your project directory and you can run the rest of the commands.
+
+And now you have a container in ECR!
+
+## Deploying to AWS ECS
+
+Now I want to deploy the container to AWS ECS.
