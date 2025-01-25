@@ -168,3 +168,9 @@ You should see this:
 Some decent info here: [Deploying a container with Amazon ECS](https://kevinkiruri.medium.com/deploying-a-container-with-amazon-ecs-d95dcab8b411).
 
 [Deploy a Spring Boot application to AWS ECS](https://hkcodeblogs.medium.com/deploy-a-spring-boot-application-to-aws-ecs-91742a32a5f1)
+
+## January 25, 2025
+
+## Deploying to AWS ECS with GitHub Actions
+
+Next I want to set up a CI/CD pipeline with GitHub Actions.
