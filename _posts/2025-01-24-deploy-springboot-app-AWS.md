@@ -166,3 +166,5 @@ You should see this:
 ![Animated GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjJueW83bXZiZWZ1NndveG42eGRndGkyNG5mYWF2bnJha2pkYTNobyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lqRu0AbfzcpMJlmT2I/giphy.gif)
 
 Some decent info here: [Deploying a container with Amazon ECS](https://kevinkiruri.medium.com/deploying-a-container-with-amazon-ecs-d95dcab8b411).
+
+[Deploy a Spring Boot application to AWS ECS](https://hkcodeblogs.medium.com/deploy-a-spring-boot-application-to-aws-ecs-91742a32a5f1)
