@@ -100,6 +100,7 @@ First I will push the container to a registry, namely AWS ECR, so that AWS has a
 One big issue I am having with AWS in general is issues with credentials. I don't feel like creating IAM users and roles and such. So I will run everything in the AWS cloud shell.
 
 First I create a container registry in AWS ECR:
+
 ![Create ECR Repository](/assets/images/create-ecr-repository.png)
 
 And then I select the repository and click "Push commands".
@@ -141,16 +142,23 @@ And finally we create a service.
 ![Create Service](/assets/images/create-ecs-service.png)
 
 You may have to create a security group for the service.
+
 Go to VPC Console and create a security group.
+
 Click on the default Security group ID and then click "Edit inbound rules".
+
 Add 2 rules, one for IP version 4 and one for IP version 6.
 
 ![Create Security Group](/assets/images/inbound-rules.png)
 
 Give it some time for the service to deploy successfully.
+
 Select the service you created.
+
 Move to the Tasks tab and click on one of the running tasks.
+
 Copy the ip address and paste it in a browser. Add the port number to the ip address.
+
 You should see this:
 
 ![Hello World](/assets/images/hello-world.png)
