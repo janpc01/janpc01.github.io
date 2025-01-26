@@ -173,4 +173,101 @@ Some decent info here: [Deploying a container with Amazon ECS](https://kevinkiru
 
 ## Deploying to AWS ECS with GitHub Actions
 
+Resources:
+- [ECS Deployments with GitHub Actions](https://medium.com/@octavio/ecs-deployments-with-github-actions-dd34beed6528)
+- [Deploying to Amazon Elastic Container Service](https://docs.github.com/en/actions/use-cases-and-examples/deploying/deploying-to-amazon-elastic-container-service?source=post_page-----dd34beed6528--------------------------------)
+
+
 Next I want to set up a CI/CD pipeline with GitHub Actions.
+
+First we need to generate AWS credentials.
+
+1. Log in to AWS Management Console
+Go to the IAM Console.
+2. Select Your User
+Click on Users in the left sidebar.
+Select the IAM user for which you want the access keys.
+3. Manage Access Keys
+In the User details page, go to the Security credentials tab.
+Scroll down to the Access keys section.
+4. Create a New Access Key
+If no access keys exist:
+- Click Create access key.
+  - Choose the access key type:
+    - Command Line Interface (CLI), SDK, and API.
+![Create Access Key](/assets/images/create-aws-access-key.png)
+
+  - Click Next, then Create.
+  - Download the .csv file with your Access Key ID and Secret Access Key.
+- If an access key already exists but is inactive:
+  - Reactivate it by clicking the Activate button.
+
+Now we can create a .github/workflows/aws.yml file in our github repository.
+```yaml
+name: Deploy to Amazon ECS
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1 # set this to your region
+  ECR_REPOSITORY: tempo # set this to your repository name
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: development # this might have to be "production"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          # Build a docker container and
+          # push it to ECR so that it can
+          # be deployed to ECS.
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+```
+
+Now we can commit and push our changes to the repository.
+You can check in the ECR registry to confirm the image is there.
+
+Next 
