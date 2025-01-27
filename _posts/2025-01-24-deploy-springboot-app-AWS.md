@@ -399,6 +399,8 @@ Now we want to add a Load Balancer to the ECS service so that we don't have to m
 
 Resources:
 - [Setup Application Load Balancer and Point to ECS Deploy to AWS ECS Fargate with Load Balancer](https://sakyasumedh.medium.com/setup-application-load-balancer-and-point-to-ecs-deploy-to-aws-ecs-fargate-with-load-balancer-4b5f6785e8f)
+- [Amazon Elastic Container Service ECS with a Load Balancer](https://medium.com/@h.fadili/amazon-elastic-container-service-ecs-with-a-load-balancer-67c9897cb70b)
+- [Deploy Backend Application to AWS ECS with Application Load Balancer Step by Step Guide Part 3](https://sakyasumedh.medium.com/deploy-backend-application-to-aws-ecs-with-application-load-balancer-step-by-step-guide-part-3-b8125ca27177)
 
 ![AWS Diagram](/assets/images/aws-diagram.webp)
 
@@ -427,3 +429,9 @@ Unfortunately an existing service cannot be updated to configure load balancing,
 Once the task is running on the new service you can go to the the load balancer page on EC2, select your service and click on the DNS name, and add :8080 to the end of the URL.
 
 Make sure to update your github workflow file to use the new service.
+
+## January 27, 2025
+
+## Adding Secrets
+
+Next I want to connect my application to a database, so I need to add secrets to the application.
