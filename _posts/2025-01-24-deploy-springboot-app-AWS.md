@@ -391,3 +391,39 @@ jobs:
 Commit changes and push to the repository. Once, the jobs execute we can navigate to ECS again, find the new public IP of the LATEST task revision and check that the application has been updated.
 
 ![Github Actions Deploy](/assets/images/github-actions-deploy.png)
+
+## January 26, 2025
+## Adding a Load Balancer
+
+Now we want to add a Load Balancer to the ECS service so that we don't have to manually update the public IP of the LATEST task revision.
+
+Resources:
+- [Setup Application Load Balancer and Point to ECS Deploy to AWS ECS Fargate with Load Balancer](https://sakyasumedh.medium.com/setup-application-load-balancer-and-point-to-ecs-deploy-to-aws-ecs-fargate-with-load-balancer-4b5f6785e8f)
+
+![AWS Diagram](/assets/images/aws-diagram.webp)
+
+1. Go to EC2 console and click on Load Balancers on the left, Create Load Balancer
+
+![Create ALB](/assets/images/create-alb-p1.png)
+![Create ALB](/assets/images/create-alb-p2.png)
+![Create ALB](/assets/images/create-alb-p3.png)
+
+Note I had to change 80 to 8080 since that is the port my backend is forwarding to.
+
+Next click Create New Target Group:
+
+![Create target group](/assets/images/create-alb-targetgroup-p1.png)
+![Create target group](/assets/images/create-alb-targetgroup-p2.png)
+
+And add it to the Application Load Balancer:
+
+![Finish ALB](/assets/images/create-alb-final.png)
+
+Unfortunately an existing service cannot be updated to configure load balancing, so create a new service same as before but this time select Load Balancing:
+
+![ALB service](/assets/images/create-alb-service-p1.png)
+![ALB service](/assets/images/create-alb-service-p2.png)
+
+Once the task is running on the new service you can go to the the load balancer page on EC2, select your service and click on the DNS name, and add :8080 to the end of the URL.
+
+Make sure to update your github workflow file to use the new service.
