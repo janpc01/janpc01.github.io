@@ -27,5 +27,5 @@ Resources:
 
 ## Setup CI/CD Pipeline
 
-https://www.youtube.com/watch?v=OMn866JBEtQ&t=3s&ab_channel=IntegrationNinjas
-https://www.youtube.com/@IntegrationNinjas
+- [IntegrationNinjas](https://www.youtube.com/@IntegrationNinjas)
+- [AWS CI/CD Pipeline](https://www.youtube.com/watch?v=OMn866JBEtQ&t=3s)
