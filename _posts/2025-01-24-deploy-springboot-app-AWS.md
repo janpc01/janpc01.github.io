@@ -429,9 +429,3 @@ Unfortunately an existing service cannot be updated to configure load balancing,
 Once the task is running on the new service you can go to the the load balancer page on EC2, select your service and click on the DNS name, and add :8080 to the end of the URL.
 
 Make sure to update your github workflow file to use the new service.
-
-## January 27, 2025
-
-## Adding Secrets
-
-Next I want to connect my application to a database, so I need to add secrets to the application.
