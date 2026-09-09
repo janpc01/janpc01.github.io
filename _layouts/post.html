@@ -1,46 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - Jan K. Czarnecki</title>
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+---
+layout: default
+---
+<div class="content">
+    <h1>{{ page.title }}</h1>
+    <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
 
-</head>
-<body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <div class="content">
-        <h1>{{ page.title }}</h1>
-        <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
-        
-        {{ content }}
-        
-        <div class="comments">
-            {% if page.comments != false %}
-            <script src="https://giscus.app/client.js"
-                    data-repo="janpc01/janpc01.github.io"
-                    data-repo-id="R_kgDONR6GQA"
-                    data-category="Announcements"
-                    data-category-id="DIC_kwDONR6GQM4ClN7R"
-                    data-mapping="pathname"
-                    data-strict="1"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="light"
-                    data-lang="en"
-                    crossorigin="anonymous"
-                    async>
-            </script>
-            {% endif %}
-        </div>
-        
-        <p><a href="{{ '/' | relative_url }}">← Back to home</a></p>
+    {{ content }}
+
+    <div class="comments">
+        {% if page.comments != false %}
+        <script src="https://giscus.app/client.js"
+                data-repo="janpc01/janpc01.github.io"
+                data-repo-id="R_kgDONR6GQA"
+                data-category="Announcements"
+                data-category-id="DIC_kwDONR6GQM4ClN7R"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+        {% endif %}
     </div>
-    
-    <div class="footer">
-        <p>&copy; {{ site.time | date: '%Y' }} Jan K. Czarnecki. All rights reserved.</p>
-    </div>
-</body>
-</html>
+
+    <p><a href="{{ '/' | relative_url }}">&larr; Back to home</a></p>
+</div>

@@ -1,20 +1,5 @@
-@font-face {
-    font-family: 'Helvetica Neue';
-    font-weight: normal;
-    src: local('Helvetica Neue'), local('HelveticaNeue'),
-         url('https://fonts.cdnfonts.com/s/19869/HelveticaNeue.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Helvetica Neue';
-    font-weight: bold;
-    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
-         url('https://fonts.cdnfonts.com/s/19869/HelveticaNeueBold.woff') format('woff');
-}
-
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 40px auto;
     max-width: 650px;
@@ -48,11 +33,45 @@ hr {
     margin-top: 20px;
 }
 
-.footer {
-    font-size: 0.9em;
+.post-date {
     color: #666;
-    text-align: center;
-    margin-top: 40px;
+    font-size: 0.9em;
+    margin-top: 0;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+details {
+    margin: 20px 0;
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: "\25B6";
+    font-size: 0.6em;
+    line-height: 1;
+    color: #666;
+    transition: transform 0.15s ease;
+}
+
+details[open] > summary::before {
+    transform: rotate(90deg);
 }
 
 .comments {
@@ -65,194 +84,104 @@ hr {
 }
 
 pre {
-  background-color: #2e3440; /* Dark background for code blocks */
-  color: #d8dee9; /* Light text */
-  padding: 1em;
-  border-radius: 8px;
-  overflow-x: auto;
-}
-code {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 0.9em;
-}
-
-
-/* TempleOS Theme Variables */
-:root {
-    --temple-bg: #FFFFFF; /* Pure blue */
-    --temple-text: #FFFFFF; /* White text */
-    --temple-heading: #FF0000; /* Bright red */
-    --temple-link: #55FF55; /* Green links */
-    --temple-border: #FFFFFF; /* White border */
-    --temple-highlight: #00FFFF; /* Cyan highlight */
-    --temple-hover: #FFFF00; /* Bright yellow hover effect */
-    --temple-colors: #000000, #0000AA, #00AA00, #00AAAA, #AA0000, #AA00AA, #AAAA00, #AAAAAA,
-                     #555555, #5555FF, #55FF55, #55FFFF, #FF5555, #FF55FF, #FFFF55, #FFFFFF;
-  }
-  
-  /* Theme Toggle Button */
-  .theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 5px 8px;
-    background: var(--temple-border);
-    color: inherit;
-    border: 1px solid var(--temple-heading);
-    font-family: "Courier New", monospace;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-  
-  .theme-toggle:hover {
-    background: var(--temple-hover);
-    color: inherit;
-    border: 1px solid var(--temple-hover);
-  }
-  
-  /* TempleOS Theme Classes */
-  .temple-theme {
-    background-color: #FFFFFF;
-    color: inherit;
-    font-family: "Courier New", monospace !important;
-    padding: 20px;
-    text-shadow: none;
-  }
-  
-  .temple-theme * {
-    font-family: "Courier New", monospace !important;
-  }
-  
-  .temple-theme .content {
-    background: transparent;
-    padding: 20px;
-    margin: 20px 0;
-  }
-  
-  .temple-theme h1,
-  .temple-theme h2 {
-    border-bottom: 1px solid var(--temple-border);
-    padding-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .temple-theme a {
-    text-decoration: underline;
-  }
-  
-  .temple-theme a:hover {
-    text-decoration: none;
-  }
-  
-  .temple-theme hr {
-    border: none;
-    border-top: 2px solid var(--temple-border) !important;
-    margin: 15px 0;
-  }
-  
-  .temple-theme .footer {
-    border-top: 2px solid var(--temple-border);
-    color: var(--temple-text) !important;
-    text-align: center;
-    padding-top: 10px;
-    margin-top: 20px;
-  }
-  
-  /* ASCII Art Styling */
-  .temple-theme .ascii-art {
-    font-family: monospace;
-    white-space: pre;
-    color: var(--temple-highlight);
-    margin: 20px auto;
-    text-align: center;
-    line-height: 1;
-    display: block;
-    width: fit-content;
+    padding: 1em;
+    border-radius: 8px;
     overflow-x: auto;
-    max-width: 100%;
-  }
-  
-  /* Blinking Text */
-  .temple-theme .blinking {
-    animation: blink 1s step-end infinite;
-    color: var(--temple-link);
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  
-  /* Bordered Containers */
-  .temple-theme .bordered-box {
-    border: 3px solid var(--temple-border);
-    padding: 10px;
-    margin: 15px 0;
-    background-color: var(--temple-bg);
-    color: var(--temple-text);
-    text-align: center;
-  }
-  
-  .temple-theme .rotating-art {
-    animation: rotate 4s linear infinite;
-    display: inline-block;
-  }
-  
-  @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-  }
-  
-  /* Make sure the ASCII art maintains its shape */
-  .temple-theme .rotating-art {
-    font-family: monospace;
-    white-space: pre;
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-    transform-origin: center;
-  }
-  
-  .temple-theme body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .temple-theme .content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    margin: 2em 0;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-.content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
 }
-  
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+/* Inline code, which Rouge leaves unstyled. */
+p > code,
+li > code {
+    background-color: #eceff4;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* Syntax highlighting for Rouge, from `rougify style base16.dark`,
+   keeping the code-block background above. */
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #d0d0d0;
+  background-color: #2e3440;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sa {
+  color: #aa759f;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}

@@ -1,257 +1,32 @@
 ---
 layout: default
-title: "Jan K. Czarnecki"
 ---
-<h1>Jan K. Czarnecki</h1>
-<p>Software Developer | Bachelor of Science in Physics and Computing Science</p>
-<p>
-    <a href="mailto:jpruscza@ualberta.ca">jpruscza@ualberta.ca</a> |
-    <a href="https://linkedin.com/in/jan-k-czarnecki/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/janpc01" target="_blank">GitHub</a> | 
-    <a href="https://instagram.com/janpc__" target="_blank">Instagram</a>
-</p>
+<h1>Jan Prus-Czarnecki</h1>
+<p><a href="mailto:janpc01@gmail.com">janpc01@gmail.com</a></p>
 
 <hr>
 
-<div class="ascii-art blinking temple-theme-only" style="display: none;">
-    ╔════════════════════════════════════════╗
-    ║            PRAISE BE TO GOD            ║
-    ╚════════════════════════════════════════╝
-</div>
-
-<div class="ascii-art temple-theme-only" style="display: none; text-align: left;">
-               |
-           \       /
-             .---. 
-        '-.  |   |  .-'
-          ___|   |___
-     -=  [           ]  =-
-         `---.   .---' 
-      __||__ |   | __||__
-      '-..-' |   | '-..-'
-        ||   |   |   ||
-        ||_.-|   |-,_||
-      .-"`   `"`'`   `"-.
-    .'                   '.
-</div>
-
-<div class="ascii-art temple-theme-only" style="display: none; text-align: left;">
-                              |~~~~~|        _____       _____
-         _____                  \~~~/ /~~~~\ /   __|     /   __|
-        |  =  |\                 | | |  o  / \  /  _  _  \  /
-        |  =  | \           |~|  | | | /~~~   \ \  || ||  \ \
-        |  =  |  |          \ \_/  / | |___    \ \ ||_||   \ \
- _______|  =  |__|____       \____/  |_____||\__| ||___||\__| |
-|          =          |\                    \____/      \____/
-| =================== | \
-|_______   =   _______|  |
- \      |  =  |\       \ |
-  \_____|  =  | \_______\|
-        |  =  |  |
-        |  =  |  |
-        |  =  |  |
-        |  =  |  |
-        |  =  |  |
-        |  =  |  |
-        |_____|  |
-        \      \ |
-         \______\|
-
-</div>
-
 <div class="content">
     <h2>About Me</h2>
-    <p>I graduated in April 2025 with a double major in Physics and Computing Science. I'm passionate about designing and building. Software development lets me do that with just a laptop and an internet connection. I'm also a passionate Judoka, transitioning from competing to coaching. In my free time, I enjoy skiing and playing chess.</p>
+    {% include about.html %}
 
-    <h2>Projects</h2>
-    <ul>
-        <li><a href="https://github.com/janpc01/habit-tracker-spring" target="_blank">Spring Boot App</a> – A Spring Boot application that provides RESTful API endpoints for user and habit management with PostgreSQL database integration</li>
-        <li>
-            <a href="https://kyosocards.com/" target="_blank">Kyoso Cards</a> – A website for creating and buying custom Judo sports cards
-            <br>
-            <small><a href="{{ '/kyosocards' | relative_url }}">↪View Technical Documentation</a></small>
-        </li>
-        <li><a href="https://sensor-data-flask.vercel.app/" target="_blank">Sensor Data</a> – A website that displays live sensor data collected by an Arduino</li>
-        <li><a href="https://memorization-app.vercel.app/" target="_blank">Memorization App</a> – A website that helps you memorize a text by breaking it up into lines</li>
+    <details>
+        <summary><h2>Blog</h2></summary>
+        {% include blog.html %}
+    </details>
 
-</li>
-    </ul>
+    <details>
+        <summary><h2>Certifications &amp; Achievements</h2></summary>
+        {% include certifications.html %}
+    </details>
 
-    <h2>Blog</h2>
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a> - {{ post.title }}
-        </li>
-        {% endfor %}
-    </ul>
+    <details>
+        <summary><h2>Reading List</h2></summary>
+        {% include reading-list.html %}
+    </details>
 
-    <h2>Work Experience</h2>
-    <ul>
-        <li>
-            <strong>Machine Learning Developer Intern</strong> - Kinaxis, Ottawa (Jan 2023 - Aug 2023)
-            <ul>
-                <li>Implemented, tested, and evaluated machine learning solutions for supply chain management</li>
-                <li>Analyzed large datasets and utilized statistical techniques to improve ML algorithms</li>
-                <li>Incorporated integration tests to prevent regressions</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Software Engineer Intern</strong> - German Research Center for AI (May 2021 - Aug 2021)
-            <ul>
-                <li>Built CO₂ emission measurement device for soil analysis</li>
-                <li>Developed hardware and software components, analyzed data with Python</li>
-                <li>Collaborated with Innotech Alberta for data collection</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Research Assistant</strong> - University of Alberta (May 2020 - Aug 2020)
-            <ul>
-                <li>Conducted research on Dansgaard-Oeschger climate events</li>
-                <li>Created mathematical models using Python for climate phenomena analysis</li>
-                <li>Analyzed 120,000 years of climate data using delayed differential equations</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Software Developer Intern</strong> - Advanis, Edmonton (July 2018 - August 2018)
-            <ul>
-                <li>Learned web development</li>
-                <li>Started to learn about machine learning</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>
-            <strong>Programming Languages:</strong>
-            <ul>
-                <li>General Purpose: C, C++, Python, Java</li>
-                <li>Web: JavaScript, TypeScript</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Frameworks & Libraries:</strong>
-            <ul>
-                <li>Web: React, Angular, Express, Node.js, Django</li>
-                <li>Machine Learning: TensorFlow, PyTorch, Keras</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Databases:</strong>
-            <ul>
-                <li>SQL: PostgreSQL, MySQL, SQLite</li>
-                <li>NoSQL: MongoDB</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Cloud Platforms:</strong>
-            <ul>
-                <li>Microsoft Azure</li>
-                <li>Azure Static Web Apps</li>
-                <li>Azure App Service</li>
-                <li>Azure Cosmos DB</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Tools:</strong> Git, GitHub, Docker, Kubernetes, LaTeX, Illustrator, Photoshop
-        </li>
-    </ul>
-
-    <h2>Certifications & Achievements</h2>
-    <ul>
-        <li>Coursera Certifications:
-            <ul>
-                <li>Neural Networks:
-                    <ul>
-                        <li><a href="https://www.coursera.org/account/accomplishments/verify/7DUJXXREZKMH">Neural Networks and Deep Learning</a> - DeepLearning.AI</li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/verify/BLMSDWB73BLW">Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization</a> - DeepLearning.AI</li>
-                    </ul>
-                </li>
-                <li>Supervised Learning:
-                    <ul>
-                        <li><a href="https://www.coursera.org/account/accomplishments/verify/CKJUZCEZH6FX">Supervised Machine Learning: Regression and Classification</a> - Stanford University</li>
-                    </ul>
-                </li>
-                <li>Reinforcement Learning:
-                    <ul>
-                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/XZGD5WSNEVJP">Fundamentals of Reinforcement Learning</a> - University of Alberta</li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/77MKTAYFNTQC">Sample-based Learning Methods</a> - University of Alberta</li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/certificate/936VEMYZ257X">Sample-based Learning Methods</a> - University of Alberta</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Jason Lang Scholarship</li>
-        <li>Alexander Rutherford Scholarship</li>
-        <li>Judo Black Belt - <a href="https://www.judoinside.com/judoka/118559/Jan_Prus_Czarnecki/judo-career">6x Provincial Champion and Canadian National Championships Cadets Bronze Medalist</a></li>
-        <li>NCCP Judo Dojo Instructor teaching kids 8-12 years old at <a href="https://www.kodokwaijudo.com/about-us/">Kodokwai Judo Club</a></li>
-    </ul>
-
-    <h2>Languages</h2>
-    <ul>
-        <li><strong>Fluent:</strong> English, Polish</li>
-        <li><strong>Intermediate:</strong> French, German</li>
-        <li><strong>Beginner:</strong> Russian</li>
-    </ul>
-
-    <h2>Reading List</h2>
-    <ul>
-        <li>
-            <strong>Currently Reading:</strong>
-            <ul>
-                <li>"Crime and Punishment" by Fyodor Dostoevsky</li>
-                <li>"Clean Code" by Robert C. Martin</li>
-                <li>"John's Gospel" by St. John</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Some of my favorite books in no particular order:</strong>
-            <ul>
-                <li>"East of Eden" by John Steinbeck</li>
-                <li>"Solaris" by Stanisław Lem</li>
-                <li>"The Hitchhiker's Guide to the Galaxy" by Douglas Adams</li>
-                <li>"The Manuscript Found in Saragossa" by Jan Potocki</li>
-                <li>"Heart of Darkness" by Joseph Conrad</li>
-                <li>"The Screwtape Letters" by C.S. Lewis</li>
-                <li>"Mathew's Gospel" by St. Matthew</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Planning to Read:</strong>
-            <ul>
-                <li>"Principles for Dealing with the Changing World Order" by Ray Dalio</li>
-                <li>"The Art of Computer Programming" by Donald E. Knuth</li>
-                <li>"The Pragmatic Programmer" by David Thomas & Andrew Hunt</li>
-                <li>"Design Patterns" by Erich Gamma et al.</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h2>Things I want to learn</h2>
-    <ul>
-        <li><a href="https://www.youtube.com/watch?v=qiQR5rTSshw&ab_channel=freeCodeCamp.org">Networking Course</a></li>
-        <li><a href="https://notes.ekzhang.com/events/nysrg">Coputer Systems</a></li>
-        <li><a href="https://blog.stackademic.com/integrating-kafka-with-spring-boot-building-a-simple-order-processing-system-56bced9f7979">Kafka for order processing</a></li>
-    </ul>
-
-    <h2>Hobbies</h2>
-    <ul>
-        <li><strong>Judo</strong></li>
-        <li><strong>Skiing</strong></li>
-        <li><strong>Chess</strong></li>
-        <li><strong>Sailing</strong></li>
-    </ul>
-
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:jpruscza@ualberta.ca">jpruscza@ualberta.ca</a></p>
-    <p>Or find me on: 
-        <a href="https://linkedin.com/in/jan-k-czarnecki/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/janpc01" target="_blank">GitHub</a> | 
-        <a href="https://instagram.com/janpc__" target="_blank">Instagram</a>
-    </p>
-</div>
-
-<div class="footer">
-    <p>&copy; 2024 Jan K. Czarnecki. All rights reserved.</p>
+    <details>
+        <summary><h2>Languages</h2></summary>
+        {% include languages.html %}
+    </details>
 </div>

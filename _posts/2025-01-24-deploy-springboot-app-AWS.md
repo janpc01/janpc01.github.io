@@ -203,6 +203,7 @@ If no access keys exist:
   - Reactivate it by clicking the Activate button.
 
 Now we can create a .github/workflows/aws.yml file in our github repository.
+{% raw %}
 ```yaml
 name: Deploy to Amazon ECS
 
@@ -266,6 +267,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 ```
+{% endraw %}
 
 Now we can commit and push our changes to the repository.
 You can check in the ECR registry to confirm the image is there.
@@ -285,6 +287,7 @@ Now in the .github/workflows/aws.yml file we need can update the env variables:
 ```
 
 Then add the final jobs at the very end of the workflow.
+{% raw %}
 ```yaml
        - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
@@ -302,8 +305,10 @@ Then add the final jobs at the very end of the workflow.
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
 ```
+{% endraw %}
 
 Here is the complete aws.yml file:
+{% raw %}
 ```yaml
 name: Deploy to Amazon ECS
 
@@ -387,6 +392,7 @@ jobs:
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
 ```
+{% endraw %}
 
 Commit changes and push to the repository. Once, the jobs execute we can navigate to ECS again, find the new public IP of the LATEST task revision and check that the application has been updated.
 
