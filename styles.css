@@ -51,9 +51,6 @@ details {
 }
 
 summary {
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
     cursor: pointer;
     list-style: none;
 }
@@ -62,7 +59,13 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-summary::before {
+summary h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+summary h2::before {
     content: "\25B6";
     font-size: 0.6em;
     line-height: 1;
@@ -70,7 +73,7 @@ summary::before {
     transition: transform 0.15s ease;
 }
 
-details[open] > summary::before {
+details[open] summary h2::before {
     transform: rotate(90deg);
 }
 
