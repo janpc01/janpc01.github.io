@@ -77,6 +77,12 @@ details[open] summary h2::before {
     transform: rotate(90deg);
 }
 
+/* Start top-level bullets at the About Me text's left edge, with the
+   item text hanging indented after them. */
+details > ul {
+    padding-left: 1.2em;
+}
+
 .comments {
     margin: 32px 0;
 }
